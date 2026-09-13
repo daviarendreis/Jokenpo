@@ -1,0 +1,1 @@
+export type Result = 'draw' | 'player' | 'ai'

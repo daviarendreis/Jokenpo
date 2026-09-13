@@ -1,0 +1,1 @@
+export type Choices = 'Rock' | 'Paper' | 'Scissors'
