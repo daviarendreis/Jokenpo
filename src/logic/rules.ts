@@ -7,3 +7,9 @@ export const beats: Record<Choices, Choices> = {
   Paper: 'Rock',
   Scissors: 'Paper'
 }
+
+export const winners: Record<Choices, Choices> = {
+  Rock: 'Paper',
+  Paper: 'Scissors',
+  Scissors: 'Rock'
+}

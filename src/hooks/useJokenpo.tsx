@@ -1,21 +1,20 @@
 import { useState } from "react"
-import { decideWinner, getAIChoice } from "../logic/logicAI"
+import { decideResult, getAiChoice } from "../logic/game"
 import type { Result } from "../types/results"
 import type { Choices } from "../types/choices"
 
 export default function useJokenpo () {
-    const [AI, setAI] = useState('Rock')
-    const [PLAYER, setPLAYER] = useState('Paper')
-    const [winner, setWinner] = useState<Result>('player')
+    const [aiChoice, setAiChoice] = useState<Choices>('Rock')
+    const [playerChoice, setPlayerChoice] = useState<Choices>('Rock')
+    const [winner, setWinner] = useState<Result>('draw')
 
-    function handleClick (playerChoice: Choices) {
-        const AIChoise = getAIChoice()
+    function handleClick (newPlayerChoice: Choices) {
+        const newAiChoice = getAiChoice(playerChoice, winner)
 
-        setAI(AIChoise)
-        setPLAYER(playerChoice)
-        setWinner(decideWinner(playerChoice, AIChoise))
+        setAiChoice(newAiChoice)
+        setPlayerChoice(newPlayerChoice)
+        setWinner(decideResult(newPlayerChoice, newAiChoice))
     }
 
-    
-    return { AI, PLAYER, winner, handleClick}
+    return { aiChoice, playerChoice, winner, handleClick}
 }

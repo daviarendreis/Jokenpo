@@ -1,13 +1,14 @@
 import { CrumpledPaperIcon, FileIcon, ScissorsIcon } from "@radix-ui/react-icons"
+import type { Choices } from "../types/choices"
 
 interface ChoiceIconProps {
-    playerChoice: string
+    choice: Choices
 }
 
-export default function ChoiceIcon ({playerChoice}: ChoiceIconProps) {
+export default function ChoiceIcon ({choice}: ChoiceIconProps) {
     return (
-        playerChoice === 'Rock' ? <CrumpledPaperIcon width={'4rem'} height={'4rem'}/> 
-        : playerChoice === 'Paper' ? <FileIcon width={'4rem'} height={'4rem'}/> 
+        choice === 'Rock' ? <CrumpledPaperIcon width={'4rem'} height={'4rem'}/> 
+        : choice === 'Paper' ? <FileIcon width={'4rem'} height={'4rem'}/> 
         : <ScissorsIcon width={'4rem'} height={'4rem'}/>
     )
 }
