@@ -4,7 +4,21 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jokenpo</title>
+    <meta name="theme-color" content="#eef0f4" />
+    <meta name="description" content="Rock, paper, scissors against an AI that watches what you win with." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Unbounded:wght@700&display=swap" rel="stylesheet" />
+    <script>
+      (function () {
+        var theme
+        try { theme = localStorage.getItem("jokenpo-theme") } catch (e) {}
+        if (theme !== "light" && theme !== "dark") theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+        document.documentElement.dataset.theme = theme
+        if (theme === "dark") document.querySelector("meta[name=theme-color]").setAttribute("content", "#13162a")
+      })()
+    </script>
+    <title>Jokenpo</title>
   </head>
   <body>
     <div id="root"></div>

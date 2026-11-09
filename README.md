@@ -23,7 +23,7 @@ Even though it's a tiny game, I kept the structure separated and clean:
 - React
 - TypeScript
 - Vite
-- Radix UI (Themes + Icons)
+- Plain CSS with custom SVG glyphs (no UI library)
 
 ## Status
 
